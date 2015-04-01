@@ -1,0 +1,69 @@
+<idea-plugin version="2" >
+  <id>com.handscape.tailor.plugin.id</id>
+  <name>Tailor Tools</name>
+  <version>1.0.4</version>
+  <vendor email="sup@h3w.com.cn" url="http://www.h3w.com.cn/">掌中经纬</vendor>
+
+  <description><![CDATA[
+      Tailor插件<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      1.新建tailor项目，提供多个模版可供选择<br>
+      2.新建JST文件，并创建对应的js。（默认将jst与js建立引用关系）<br>
+      3.添加多项目管理工具<br>
+      4.Base64编码工具<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <fileTypeFactory implementation="com.handscape.tailor.plugin.TailorFileTypeFactory"/>
+    <projectTemplate projectType="Tailor" templatePath="tailor/config/projectTemplates/TailorJworkSapce_推荐.zip" category="true"/>
+    <projectTemplate projectType="Tailor"  templatePath="tailor/config/projectTemplates/凤凰网新闻_入门.zip" category="true" />
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+    <component>
+      <implementation-class>com.handscape.tailor.component.ToolsConfigurationComponent</implementation-class>
+    </component>
+    <!--<component>-->
+      <!--<implementation-class>com.handscape.tailor.component.TialorMenuPluginRegistration</implementation-class>-->
+    <!--</component>-->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+    <component>
+      <implementation-class>com.handscape.tailor.project.ProjectPlugin</implementation-class>
+    </component>
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <group id="TialorMenu.Plugin" text="Tailor" description="TialorMenu.Plugin">
+        <add-to-group group-id="MainMenu" anchor="last"/>
+        <action id="ProjectTool" class="com.handscape.tailor.action.ProjectToolAction" text="多项目配置管理工具" description="多项目配置管理工具"/>
+        <action id="Base64" class="com.handscape.tailor.action.Base64Action" text="Base64工具" description="Base64转码工具"/>
+        <action id="TailorAboutAction" class="com.handscape.tailor.action.TailorAboutAction" text="关于Tailor插件"  description="TailorAboutAction"/>
+      </group>
+    <action id="NewJst" class="com.handscape.tailor.action.NewJstFileAction" text="Jst File" description="NewJst">
+      <add-to-group group-id="NewGroup" anchor="first"/>
+    </action>
+  </actions>
+  <module-components>
+    <component>
+      <implementation-class>com.handscape.tailor.model.FileModuleComponent</implementation-class>
+    </component>
+  </module-components>
+</idea-plugin>

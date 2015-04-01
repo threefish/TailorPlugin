@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<%include("FILENAME")%>
+<title>Tailor轻应用</title>
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width,initial-scale=1.0,maximun-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--当启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色。默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）。这个主要是根据实际的页面设计的主体色为搭配来进行设置。-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--添加到主屏后的标题-->
+    <meta name="apple-mobile-web-app-title" content="Tailor轻应用">
+    <!--忽略页面中的数字识别为电话号码-->
+    <meta name="format-detection" content="telphone=no, email=no">
+    <!--针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓-->
+    <meta name="HandheldFriendly" content="true">
+    <!--UC强制全屏-->
+    <meta name="full-screen" content="yes">
+    <!--UC应用模式-->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--QQ强制全屏-->
+    <meta name="x5-fullscreen" content="yes">
+    <!--避免如百度转码可添加如下meta-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+</head>
+<body>
+<div>
+    <span>模版</span>
+</div>
+</body>
+</html>
